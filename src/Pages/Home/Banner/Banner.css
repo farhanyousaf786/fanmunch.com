@@ -207,8 +207,8 @@
   }
 
   .hero-title {
-    font-size: clamp(32px, 9vw, 54px);
-    line-height: 0.95;
+    font-size: clamp(48px, 9vw, 88px);
+    line-height: 0.85;
   }
 
   .hero-title-white {
@@ -220,6 +220,12 @@
   .slide-arrow {
     font-size: 32px;
     padding: 8px;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 10vw, 52px);
+    line-height: 0.98;
+    letter-spacing: -2px;
   }
   
   .slide-arrow.left-arrow {
@@ -320,26 +326,32 @@
 }
 
 .hero-title {
-  font-size: clamp(60px, 8vw, 120px);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -2px;
+  font-size: clamp(72px, 7.5vw, 160px);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -4px;
   margin: 0;
   text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: clamp(110px, 6.5vw, 220px);
+  }
 }
 
 .hero-title-white {
   display: block;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+  margin-bottom: 15px;
 }
 
 .hero-title-orange {
   display: block;
   color: #4A90E2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  letter-spacing: -1px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+  letter-spacing: -2px;
 }
 
 .carousel-indicators {
@@ -396,10 +408,6 @@
   .hero-text {
     margin-bottom: 50px;
     animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .hero-title {
-    font-size: clamp(40px, 10vw, 80px);
   }
   
   .carousel-indicators {

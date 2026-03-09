@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './Banner.css';
 import Header from '../../../Components/Header/Header';
 import bgImage from '../../../assets/images/bg-images/bg1.avif';
+import FanMunchExperience from '../FanMunchExperience/FanMunchExperience';
+import PressQuote from '../PressQuote/PressQuote';
+import Footer from '../Footer/Footer';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -93,7 +96,7 @@ const Banner = () => {
       <div 
         className="banner" 
         style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${currentSlideData.image})` 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${currentSlideData.image})` 
         }}
       >
         <Header />
@@ -152,6 +155,12 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
+      <FanMunchExperience />
+
+      <PressQuote />
+
+      <Footer />
     </div>
   );
 };

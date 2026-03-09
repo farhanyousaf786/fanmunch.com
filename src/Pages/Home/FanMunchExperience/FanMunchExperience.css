@@ -1,0 +1,94 @@
+.fanmunch-experience {
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 24px;
+}
+
+.fanmunch-experience__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.fanmunch-experience__title {
+  font-size: clamp(32px, 3.5vw, 52px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111827;
+  margin: 0;
+}
+
+.fanmunch-experience__accent {
+  width: 120px;
+  height: 4px;
+  background: #4A90E2;
+  border-radius: 999px;
+  margin: 18px 0 26px;
+}
+
+.fanmunch-experience__text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #374151;
+  margin: 0 0 18px;
+}
+
+.fanmunch-experience__bold {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #111827;
+  font-weight: 800;
+  margin: 18px 0 0;
+}
+
+.fanmunch-experience__media {
+  width: 100%;
+}
+
+.fanmunch-experience__image {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 900px) {
+  .fanmunch-experience {
+    padding: 64px 20px;
+  }
+
+  .fanmunch-experience__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .fanmunch-experience__image {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fanmunch-experience {
+    padding: 48px 16px;
+  }
+
+  .fanmunch-experience__title {
+    font-size: 30px;
+  }
+
+  .fanmunch-experience__accent {
+    width: 92px;
+    margin: 14px 0 20px;
+  }
+
+  .fanmunch-experience__text,
+  .fanmunch-experience__bold {
+    font-size: 15px;
+  }
+}
