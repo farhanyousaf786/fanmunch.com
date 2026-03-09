@@ -217,23 +217,18 @@
 }
 
 @media (max-width: 480px) {
+  .banner {
+    height: 45vh;
+  }
+
   .slide-arrow {
-    font-size: 32px;
-    padding: 8px;
+    display: none;
   }
 
   .hero-title {
-    font-size: clamp(32px, 10vw, 52px);
+    font-size: clamp(26px, 8.5vw, 44px);
     line-height: 0.98;
     letter-spacing: -2px;
-  }
-  
-  .slide-arrow.left-arrow {
-    left: 6px;
-  }
-  
-  .slide-arrow.right-arrow {
-    right: 6px;
   }
   
   .step-icon {
