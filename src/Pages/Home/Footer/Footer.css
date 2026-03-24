@@ -96,6 +96,8 @@
 .footer__social {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer__social-link {
@@ -140,7 +142,29 @@
 
 @media (max-width: 480px) {
   .footer {
-    padding: 36px 16px 16px;
+    padding: 32px 18px 16px;
+  }
+
+  .footer__top {
+    gap: 28px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+  }
+
+  .footer__brand {
+    gap: 10px;
+  }
+
+  .footer__links {
+    gap: 18px;
+  }
+
+  .footer__column {
+    gap: 12px;
+  }
+
+  .footer__list {
+    gap: 10px;
   }
 
   .footer__links {
@@ -150,5 +174,10 @@
 
   .footer__tagline {
     font-size: 15px;
+  }
+
+  .footer__bottom {
+    padding-top: 18px;
+    gap: 14px;
   }
 }

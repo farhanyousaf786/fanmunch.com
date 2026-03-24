@@ -22,7 +22,17 @@ const Header = () => {
           </Link>
         </div>
         
-        <nav className={`navigation ${isMenuOpen ? 'mobile-open' : ''}`}>
+        <div
+          className={`mobile-nav-backdrop ${isMenuOpen ? 'open' : ''}`}
+          onClick={closeMenu}
+          aria-hidden={!isMenuOpen}
+        ></div>
+
+        <nav
+          id="primary-navigation"
+          className={`navigation ${isMenuOpen ? 'mobile-open' : ''}`}
+          aria-label="Primary"
+        >
           <Link to="/" className="nav-link" onClick={closeMenu}>HOME</Link>
           <Link to="/avenues" className="nav-link" onClick={closeMenu}>OUR AVENUES</Link>
           <Link to="/goal" className="nav-link" onClick={closeMenu}>OUR GOAL</Link>
@@ -31,7 +41,14 @@ const Header = () => {
           <Link to="/contact" className="nav-link" onClick={closeMenu}>CONTACT US</Link>
         </nav>
         
-        <button className="mobile-menu-toggle" onClick={toggleMenu}>
+        <button
+          className="mobile-menu-toggle"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          type="button"
+        >
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>

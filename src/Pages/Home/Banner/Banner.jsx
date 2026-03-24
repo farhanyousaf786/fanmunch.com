@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Banner.css';
 import Header from '../../../Components/Header/Header';
 import bgImage from '../../../assets/images/bg-images/bg1.avif';
+import bookingIcon from '../../../assets/icons/booking.png';
+import bagIcon from '../../../assets/icons/bag.png';
+import deliveryManIcon from '../../../assets/icons/delivery-man.png';
 import FanMunchExperience from '../FanMunchExperience/FanMunchExperience';
 import PressQuote from '../PressQuote/PressQuote';
-import Footer from '../Footer/Footer';
+import Footer from '../../../Components/Footer/Footer';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -84,11 +87,6 @@ const Banner = () => {
     setCurrentSlide(index);
   };
 
-  const navigateFlow = (direction) => {
-    // This function can be used to navigate through different app flows
-    console.log(`Navigating ${direction}`);
-  };
-
   const currentSlideData = slides[currentSlide];
 
   return (
@@ -100,39 +98,32 @@ const Banner = () => {
         }}
       >
         <Header />
-        <button
-          className="slide-arrow left-arrow"
-          onClick={() => goToSlide((currentSlide - 1 + slides.length) % slides.length)}
-          type="button"
-        >
-          &lt;
-        </button>
-        <button
-          className="slide-arrow right-arrow"
-          onClick={() => goToSlide((currentSlide + 1) % slides.length)}
-          type="button"
-        >
-          &gt;
-        </button>
-        
+
         <div className="banner-content">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="hero-title">
-                <span className="hero-title-white">{currentSlideData.title}</span>
-                <span className="hero-title-orange">{currentSlideData.subtitle}</span>
-              </h1>
+          <div className="banner-inner">
+            <div className="hero-content">
+              <div className="hero-text">
+                <div className="hero-badge">In-seat ordering</div>
+                <h1 className="hero-title">
+                  <span className="hero-title-white">{currentSlideData.title}</span>
+                  <span className="hero-title-orange">{currentSlideData.subtitle}</span>
+                </h1>
+                <p className="hero-subtitle">Fresh food. Zero wait.</p>
+              </div>
             </div>
-            
-            <div className="carousel-indicators">
-              {slides.map((_, index) => (
-                <span 
-                  key={index} 
-                  className={`dot ${index === currentSlide ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
-                ></span>
-              ))}
-            </div>
+          </div>
+
+          <div className="carousel-indicators" role="tablist" aria-label="Hero slides">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+                type="button"
+                aria-label={`Go to slide ${index + 1}`}
+                aria-pressed={index === currentSlide}
+              ></button>
+            ))}
           </div>
         </div>
       </div>
@@ -140,17 +131,23 @@ const Banner = () => {
       <div className="white-section">
         <div className="app-flow">
           <div className="flow-step">
-            <div className="step-icon">📱</div>
+            <div className="step-icon">
+              <img src={bookingIcon} alt="Open app" loading="lazy" />
+            </div>
             <div className="step-text">Open App</div>
           </div>
           <div className="flow-arrow">→</div>
           <div className="flow-step">
-            <div className="step-icon">🍔</div>
+            <div className="step-icon">
+              <img src={bagIcon} alt="Order from seats" loading="lazy" />
+            </div>
             <div className="step-text">Order From Seats</div>
           </div>
           <div className="flow-arrow">→</div>
           <div className="flow-step">
-            <div className="step-icon">✅</div>
+            <div className="step-icon">
+              <img src={deliveryManIcon} alt="Get order" loading="lazy" />
+            </div>
             <div className="step-text">Get Order</div>
           </div>
         </div>

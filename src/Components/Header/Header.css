@@ -1,11 +1,14 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 40px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+  padding: 14px 28px;
+  background: rgba(10, 12, 20, 0.35);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-container {
@@ -14,7 +17,7 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0;
 }
 
 .logo-section {
@@ -24,10 +27,10 @@
 }
 
 .logo {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 800;
   color: #4A90E2;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 .certification {
@@ -51,22 +54,26 @@
 
 .navigation {
   display: flex;
-  gap: 30px;
+  gap: 22px;
   align-items: center;
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
   transition: color 0.3s ease;
   position: relative;
 }
 
 .nav-link:hover {
   color: #4A90E2;
+}
+
+.mobile-nav-backdrop {
+  display: none;
 }
 
 .nav-link.dropdown::after {
@@ -117,7 +124,7 @@
 
 @media (max-width: 1024px) {
   .header {
-    padding: 15px 20px;
+    padding: 12px 18px;
   }
   
   .navigation {
@@ -129,7 +136,7 @@
   }
   
   .logo {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
@@ -147,6 +154,22 @@
     margin: 0;
     padding: 0 12px;
   }
+
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 999;
+  }
+
+  .mobile-nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
   
   .navigation {
     position: fixed;
@@ -155,7 +178,9 @@
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 30, 0.98) 0%, rgba(26, 26, 46, 0.98) 100%);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
     flex-direction: column;
     gap: 0;
     padding: 80px 30px 30px;
@@ -163,6 +188,7 @@
     transition: transform 0.3s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
+    z-index: 1000;
   }
   
   .navigation.mobile-open {
@@ -196,7 +222,7 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 12px 15px;
+    padding: 10px 12px;
   }
   
   .logo {
